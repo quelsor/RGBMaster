@@ -1,5 +1,5 @@
-$("#restart").click(function () {
-    RGB();
+$(document).ready(function () {
+RGB();
     rightColor();
 
     $(".color").click(function () {
@@ -10,6 +10,11 @@ $("#restart").click(function () {
         }
     });
 
+    $("#restart").click(function () {
+        $("p").text(""); // Очистити текст
+        RGB();
+        rightColor();
+    });
 
     function RGB() {
         return $("p").text(`rgb(${randNum()}, ${randNum()}, ${randNum()})`)
